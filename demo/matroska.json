@@ -1,0 +1,2174 @@
+[
+  {
+    "name": "Segment",
+    "path": "1*1(\\Segment)",
+    "id": "0x18538067",
+    "type": "master",
+    "minOccurs": "1",
+    "minver": "1"
+  },
+  {
+    "name": "SeekHead",
+    "path": "0*2(\\Segment\\SeekHead)",
+    "cppname": "SeekHeader",
+    "id": "0x114D9B74",
+    "type": "master",
+    "maxOccurs": "2",
+    "minver": "1"
+  },
+  {
+    "name": "Seek",
+    "path": "1*(\\Segment\\SeekHead\\Seek)",
+    "cppname": "SeekPoint",
+    "id": "0x4DBB",
+    "type": "master",
+    "minOccurs": "1",
+    "maxOccurs": "unbounded",
+    "minver": "1"
+  },
+  {
+    "name": "SeekID",
+    "path": "1*1(\\Segment\\SeekHead\\Seek\\SeekID)",
+    "id": "0x53AB",
+    "type": "binary",
+    "minOccurs": "1",
+    "minver": "1"
+  },
+  {
+    "name": "SeekPosition",
+    "path": "1*1(\\Segment\\SeekHead\\Seek\\SeekPosition)",
+    "id": "0x53AC",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1"
+  },
+  {
+    "name": "Info",
+    "path": "1*(\\Segment\\Info)",
+    "id": "0x1549A966",
+    "type": "master",
+    "minOccurs": "1",
+    "maxOccurs": "unbounded",
+    "minver": "1"
+  },
+  {
+    "name": "SegmentUID",
+    "path": "0*1(\\Segment\\Info\\SegmentUID)",
+    "id": "0x73A4",
+    "type": "binary",
+    "minver": "1",
+    "webm": "0",
+    "range": "not 0",
+    "size": "16"
+  },
+  {
+    "name": "SegmentFilename",
+    "path": "0*1(\\Segment\\Info\\SegmentFilename)",
+    "id": "0x7384",
+    "type": "utf-8",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "PrevUID",
+    "path": "0*1(\\Segment\\Info\\PrevUID)",
+    "id": "0x3CB923",
+    "type": "binary",
+    "minver": "1",
+    "webm": "0",
+    "size": "16"
+  },
+  {
+    "name": "PrevFilename",
+    "path": "0*1(\\Segment\\Info\\PrevFilename)",
+    "id": "0x3C83AB",
+    "type": "utf-8",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "NextUID",
+    "path": "0*1(\\Segment\\Info\\NextUID)",
+    "id": "0x3EB923",
+    "type": "binary",
+    "minver": "1",
+    "webm": "0",
+    "size": "16"
+  },
+  {
+    "name": "NextFilename",
+    "path": "0*1(\\Segment\\Info\\NextFilename)",
+    "id": "0x3E83BB",
+    "type": "utf-8",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "SegmentFamily",
+    "path": "0*(\\Segment\\Info\\SegmentFamily)",
+    "id": "0x4444",
+    "type": "binary",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0",
+    "size": "16"
+  },
+  {
+    "name": "ChapterTranslate",
+    "path": "0*(\\Segment\\Info\\ChapterTranslate)",
+    "id": "0x6924",
+    "type": "master",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "ChapterTranslateEditionUID",
+    "path": "0*(\\Segment\\Info\\ChapterTranslate\\ChapterTranslateEditionUID)",
+    "id": "0x69FC",
+    "type": "uinteger",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "ChapterTranslateCodec",
+    "path": "1*1(\\Segment\\Info\\ChapterTranslate\\ChapterTranslateCodec)",
+    "id": "0x69BF",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "ChapterTranslateID",
+    "path": "1*1(\\Segment\\Info\\ChapterTranslate\\ChapterTranslateID)",
+    "id": "0x69A5",
+    "type": "binary",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "TimecodeScale",
+    "path": "1*1(\\Segment\\Info\\TimecodeScale)",
+    "id": "0x2AD7B1",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "default": "1000000"
+  },
+  {
+    "name": "Duration",
+    "path": "0*1(\\Segment\\Info\\Duration)",
+    "id": "0x4489",
+    "type": "float",
+    "minver": "1",
+    "range": "> 0x0p+0"
+  },
+  {
+    "name": "DateUTC",
+    "path": "0*1(\\Segment\\Info\\DateUTC)",
+    "id": "0x4461",
+    "type": "date",
+    "minver": "1"
+  },
+  {
+    "name": "Title",
+    "path": "0*1(\\Segment\\Info\\Title)",
+    "id": "0x7BA9",
+    "type": "utf-8",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "MuxingApp",
+    "path": "1*1(\\Segment\\Info\\MuxingApp)",
+    "id": "0x4D80",
+    "type": "utf-8",
+    "minOccurs": "1",
+    "minver": "1"
+  },
+  {
+    "name": "WritingApp",
+    "path": "1*1(\\Segment\\Info\\WritingApp)",
+    "id": "0x5741",
+    "type": "utf-8",
+    "minOccurs": "1",
+    "minver": "1"
+  },
+  {
+    "name": "Cluster",
+    "path": "0*(\\Segment\\Cluster)",
+    "id": "0x1F43B675",
+    "type": "master",
+    "maxOccurs": "unbounded",
+    "minver": "1"
+  },
+  {
+    "name": "Timecode",
+    "path": "1*1(\\Segment\\Cluster\\Timecode)",
+    "cppname": "ClusterTimecode",
+    "id": "0xE7",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1"
+  },
+  {
+    "name": "SilentTracks",
+    "path": "0*1(\\Segment\\Cluster\\SilentTracks)",
+    "cppname": "ClusterSilentTracks",
+    "id": "0x5854",
+    "type": "master",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "SilentTrackNumber",
+    "path": "0*(\\Segment\\Cluster\\SilentTracks\\SilentTrackNumber)",
+    "cppname": "ClusterSilentTrackNumber",
+    "id": "0x58D7",
+    "type": "uinteger",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "Position",
+    "path": "0*1(\\Segment\\Cluster\\Position)",
+    "cppname": "ClusterPosition",
+    "id": "0xA7",
+    "type": "uinteger",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "PrevSize",
+    "path": "0*1(\\Segment\\Cluster\\PrevSize)",
+    "cppname": "ClusterPrevSize",
+    "id": "0xAB",
+    "type": "uinteger",
+    "minver": "1"
+  },
+  {
+    "name": "SimpleBlock",
+    "path": "0*(\\Segment\\Cluster\\SimpleBlock)",
+    "id": "0xA3",
+    "type": "binary",
+    "maxOccurs": "unbounded",
+    "minver": "2",
+    "webm": "1",
+    "divx": "1"
+  },
+  {
+    "name": "BlockGroup",
+    "path": "0*(\\Segment\\Cluster\\BlockGroup)",
+    "id": "0xA0",
+    "type": "master",
+    "maxOccurs": "unbounded",
+    "minver": "1"
+  },
+  {
+    "name": "Block",
+    "path": "1*1(\\Segment\\Cluster\\BlockGroup\\Block)",
+    "id": "0xA1",
+    "type": "binary",
+    "minOccurs": "1",
+    "minver": "1"
+  },
+  {
+    "name": "BlockVirtual",
+    "path": "0*1(\\Segment\\Cluster\\BlockGroup\\BlockVirtual)",
+    "id": "0xA2",
+    "type": "binary",
+    "minver": "0",
+    "maxver": "0",
+    "webm": "0"
+  },
+  {
+    "name": "BlockAdditions",
+    "path": "0*1(\\Segment\\Cluster\\BlockGroup\\BlockAdditions)",
+    "id": "0x75A1",
+    "type": "master",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "BlockMore",
+    "path": "1*(\\Segment\\Cluster\\BlockGroup\\BlockAdditions\\BlockMore)",
+    "id": "0xA6",
+    "type": "master",
+    "minOccurs": "1",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "BlockAddID",
+    "path": "1*1(\\Segment\\Cluster\\BlockGroup\\BlockAdditions\\BlockMore\\BlockAddID)",
+    "id": "0xEE",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0",
+    "default": "1",
+    "range": "not 0"
+  },
+  {
+    "name": "BlockAdditional",
+    "path": "1*1(\\Segment\\Cluster\\BlockGroup\\BlockAdditions\\BlockMore\\BlockAdditional)",
+    "id": "0xA5",
+    "type": "binary",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "BlockDuration",
+    "path": "0*1(\\Segment\\Cluster\\BlockGroup\\BlockDuration)",
+    "id": "0x9B",
+    "type": "uinteger",
+    "minver": "1",
+    "default": "DefaultDuration"
+  },
+  {
+    "name": "ReferencePriority",
+    "path": "1*1(\\Segment\\Cluster\\BlockGroup\\ReferencePriority)",
+    "cppname": "FlagReferenced",
+    "id": "0xFA",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0",
+    "default": "0"
+  },
+  {
+    "name": "ReferenceBlock",
+    "path": "0*(\\Segment\\Cluster\\BlockGroup\\ReferenceBlock)",
+    "id": "0xFB",
+    "type": "integer",
+    "maxOccurs": "unbounded",
+    "minver": "1"
+  },
+  {
+    "name": "ReferenceVirtual",
+    "path": "0*1(\\Segment\\Cluster\\BlockGroup\\ReferenceVirtual)",
+    "id": "0xFD",
+    "type": "integer",
+    "minver": "0",
+    "maxver": "0",
+    "webm": "0"
+  },
+  {
+    "name": "CodecState",
+    "path": "0*1(\\Segment\\Cluster\\BlockGroup\\CodecState)",
+    "id": "0xA4",
+    "type": "binary",
+    "minver": "2",
+    "webm": "0"
+  },
+  {
+    "name": "DiscardPadding",
+    "path": "0*1(\\Segment\\Cluster\\BlockGroup\\DiscardPadding)",
+    "id": "0x75A2",
+    "type": "integer",
+    "minver": "4",
+    "webm": "1"
+  },
+  {
+    "name": "Slices",
+    "path": "0*1(\\Segment\\Cluster\\BlockGroup\\Slices)",
+    "id": "0x8E",
+    "type": "master",
+    "minver": "1",
+    "divx": "0"
+  },
+  {
+    "name": "TimeSlice",
+    "path": "0*(\\Segment\\Cluster\\BlockGroup\\Slices\\TimeSlice)",
+    "id": "0xE8",
+    "type": "master",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "divx": "0"
+  },
+  {
+    "name": "LaceNumber",
+    "path": "0*1(\\Segment\\Cluster\\BlockGroup\\Slices\\TimeSlice\\LaceNumber)",
+    "cppname": "SliceLaceNumber",
+    "id": "0xCC",
+    "type": "uinteger",
+    "minver": "1",
+    "default": "0",
+    "divx": "0"
+  },
+  {
+    "name": "FrameNumber",
+    "path": "0*1(\\Segment\\Cluster\\BlockGroup\\Slices\\TimeSlice\\FrameNumber)",
+    "cppname": "SliceFrameNumber",
+    "id": "0xCD",
+    "type": "uinteger",
+    "minver": "0",
+    "maxver": "0",
+    "default": "0"
+  },
+  {
+    "name": "BlockAdditionID",
+    "path": "0*1(\\Segment\\Cluster\\BlockGroup\\Slices\\TimeSlice\\BlockAdditionID)",
+    "cppname": "SliceBlockAddID",
+    "id": "0xCB",
+    "type": "uinteger",
+    "minver": "0",
+    "maxver": "0",
+    "default": "0"
+  },
+  {
+    "name": "Delay",
+    "path": "0*1(\\Segment\\Cluster\\BlockGroup\\Slices\\TimeSlice\\Delay)",
+    "cppname": "SliceDelay",
+    "id": "0xCE",
+    "type": "uinteger",
+    "minver": "0",
+    "maxver": "0",
+    "default": "0"
+  },
+  {
+    "name": "SliceDuration",
+    "path": "0*1(\\Segment\\Cluster\\BlockGroup\\Slices\\TimeSlice\\SliceDuration)",
+    "id": "0xCF",
+    "type": "uinteger",
+    "minver": "0",
+    "maxver": "0",
+    "default": "0"
+  },
+  {
+    "name": "ReferenceFrame",
+    "path": "0*1(\\Segment\\Cluster\\BlockGroup\\ReferenceFrame)",
+    "id": "0xC8",
+    "type": "master",
+    "minver": "0",
+    "maxver": "0",
+    "webm": "0",
+    "divx": "1"
+  },
+  {
+    "name": "ReferenceOffset",
+    "path": "1*1(\\Segment\\Cluster\\BlockGroup\\ReferenceFrame\\ReferenceOffset)",
+    "id": "0xC9",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "0",
+    "maxver": "0",
+    "webm": "0",
+    "divx": "1"
+  },
+  {
+    "name": "ReferenceTimeCode",
+    "path": "1*1(\\Segment\\Cluster\\BlockGroup\\ReferenceFrame\\ReferenceTimeCode)",
+    "id": "0xCA",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "0",
+    "maxver": "0",
+    "webm": "0",
+    "divx": "1"
+  },
+  {
+    "name": "EncryptedBlock",
+    "path": "0*(\\Segment\\Cluster\\EncryptedBlock)",
+    "id": "0xAF",
+    "type": "binary",
+    "maxOccurs": "unbounded",
+    "minver": "0",
+    "maxver": "0",
+    "webm": "0"
+  },
+  {
+    "name": "Tracks",
+    "path": "0*(\\Segment\\Tracks)",
+    "id": "0x1654AE6B",
+    "type": "master",
+    "maxOccurs": "unbounded",
+    "minver": "1"
+  },
+  {
+    "name": "TrackEntry",
+    "path": "1*(\\Segment\\Tracks\\TrackEntry)",
+    "id": "0xAE",
+    "type": "master",
+    "minOccurs": "1",
+    "maxOccurs": "unbounded",
+    "minver": "1"
+  },
+  {
+    "name": "TrackNumber",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\TrackNumber)",
+    "id": "0xD7",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "range": "not 0"
+  },
+  {
+    "name": "TrackUID",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\TrackUID)",
+    "id": "0x73C5",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "range": "not 0"
+  },
+  {
+    "name": "TrackType",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\TrackType)",
+    "id": "0x83",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "range": "1-254"
+  },
+  {
+    "name": "FlagEnabled",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\FlagEnabled)",
+    "cppname": "TrackFlagEnabled",
+    "id": "0xB9",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "2",
+    "webm": "1",
+    "default": "1",
+    "range": "0-1"
+  },
+  {
+    "name": "FlagDefault",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\FlagDefault)",
+    "cppname": "TrackFlagDefault",
+    "id": "0x88",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "default": "1",
+    "range": "0-1"
+  },
+  {
+    "name": "FlagForced",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\FlagForced)",
+    "cppname": "TrackFlagForced",
+    "id": "0x55AA",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "default": "0",
+    "range": "0-1"
+  },
+  {
+    "name": "FlagLacing",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\FlagLacing)",
+    "cppname": "TrackFlagLacing",
+    "id": "0x9C",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "default": "1",
+    "range": "0-1"
+  },
+  {
+    "name": "MinCache",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\MinCache)",
+    "cppname": "TrackMinCache",
+    "id": "0x6DE7",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0",
+    "default": "0"
+  },
+  {
+    "name": "MaxCache",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\MaxCache)",
+    "cppname": "TrackMaxCache",
+    "id": "0x6DF8",
+    "type": "uinteger",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "DefaultDuration",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\DefaultDuration)",
+    "cppname": "TrackDefaultDuration",
+    "id": "0x23E383",
+    "type": "uinteger",
+    "minver": "1",
+    "range": "not 0"
+  },
+  {
+    "name": "DefaultDecodedFieldDuration",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\DefaultDecodedFieldDuration)",
+    "cppname": "TrackDefaultDecodedFieldDuration",
+    "id": "0x234E7A",
+    "type": "uinteger",
+    "minver": "4",
+    "range": "not 0"
+  },
+  {
+    "name": "TrackTimecodeScale",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\TrackTimecodeScale)",
+    "id": "0x23314F",
+    "type": "float",
+    "minOccurs": "1",
+    "minver": "0",
+    "maxver": "0",
+    "webm": "0",
+    "default": "0x1p+0",
+    "range": "> 0x0p+0"
+  },
+  {
+    "name": "TrackOffset",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\TrackOffset)",
+    "id": "0x537F",
+    "type": "integer",
+    "minver": "0",
+    "maxver": "0",
+    "webm": "0",
+    "default": "0"
+  },
+  {
+    "name": "MaxBlockAdditionID",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\MaxBlockAdditionID)",
+    "id": "0x55EE",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0",
+    "default": "0"
+  },
+  {
+    "name": "Name",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Name)",
+    "cppname": "TrackName",
+    "id": "0x536E",
+    "type": "utf-8",
+    "minver": "1"
+  },
+  {
+    "name": "Language",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Language)",
+    "cppname": "TrackLanguage",
+    "id": "0x22B59C",
+    "type": "string",
+    "minver": "1",
+    "default": "eng"
+  },
+  {
+    "name": "CodecID",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\CodecID)",
+    "id": "0x86",
+    "type": "string",
+    "minOccurs": "1",
+    "minver": "1"
+  },
+  {
+    "name": "CodecPrivate",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\CodecPrivate)",
+    "id": "0x63A2",
+    "type": "binary",
+    "minver": "1"
+  },
+  {
+    "name": "CodecName",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\CodecName)",
+    "id": "0x258688",
+    "type": "utf-8",
+    "minver": "1"
+  },
+  {
+    "name": "AttachmentLink",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\AttachmentLink)",
+    "cppname": "TrackAttachmentLink",
+    "id": "0x7446",
+    "type": "uinteger",
+    "minver": "1",
+    "webm": "0",
+    "range": "not 0"
+  },
+  {
+    "name": "CodecSettings",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\CodecSettings)",
+    "id": "0x3A9697",
+    "type": "utf-8",
+    "minver": "0",
+    "maxver": "0",
+    "webm": "0"
+  },
+  {
+    "name": "CodecInfoURL",
+    "path": "0*(\\Segment\\Tracks\\TrackEntry\\CodecInfoURL)",
+    "id": "0x3B4040",
+    "type": "string",
+    "maxOccurs": "unbounded",
+    "minver": "0",
+    "maxver": "0",
+    "webm": "0"
+  },
+  {
+    "name": "CodecDownloadURL",
+    "path": "0*(\\Segment\\Tracks\\TrackEntry\\CodecDownloadURL)",
+    "id": "0x26B240",
+    "type": "string",
+    "maxOccurs": "unbounded",
+    "minver": "0",
+    "maxver": "0",
+    "webm": "0"
+  },
+  {
+    "name": "CodecDecodeAll",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\CodecDecodeAll)",
+    "id": "0xAA",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "2",
+    "webm": "0",
+    "default": "1",
+    "range": "0-1"
+  },
+  {
+    "name": "TrackOverlay",
+    "path": "0*(\\Segment\\Tracks\\TrackEntry\\TrackOverlay)",
+    "id": "0x6FAB",
+    "type": "uinteger",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "CodecDelay",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\CodecDelay)",
+    "id": "0x56AA",
+    "type": "uinteger",
+    "default": "0",
+    "minver": "4",
+    "webm": "1"
+  },
+  {
+    "name": "SeekPreRoll",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\SeekPreRoll)",
+    "id": "0x56BB",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "default": "0",
+    "minver": "4",
+    "webm": "1"
+  },
+  {
+    "name": "TrackTranslate",
+    "path": "0*(\\Segment\\Tracks\\TrackEntry\\TrackTranslate)",
+    "id": "0x6624",
+    "type": "master",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "TrackTranslateEditionUID",
+    "path": "0*(\\Segment\\Tracks\\TrackEntry\\TrackTranslate\\TrackTranslateEditionUID)",
+    "id": "0x66FC",
+    "type": "uinteger",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "TrackTranslateCodec",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\TrackTranslate\\TrackTranslateCodec)",
+    "id": "0x66BF",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "TrackTranslateTrackID",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\TrackTranslate\\TrackTranslateTrackID)",
+    "id": "0x66A5",
+    "type": "binary",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "Video",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video)",
+    "cppname": "TrackVideo",
+    "id": "0xE0",
+    "type": "master",
+    "minver": "1"
+  },
+  {
+    "name": "FlagInterlaced",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\Video\\FlagInterlaced)",
+    "cppname": "VideoFlagInterlaced",
+    "id": "0x9A",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "2",
+    "webm": "1",
+    "default": "0",
+    "range": "0-2"
+  },
+  {
+    "name": "FieldOrder",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\Video\\FieldOrder)",
+    "cppname": "VideoFieldOrder",
+    "id": "0x9D",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "4",
+    "webm": "0",
+    "default": "2",
+    "range": "0-14"
+  },
+  {
+    "name": "StereoMode",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\StereoMode)",
+    "cppname": "VideoStereoMode",
+    "id": "0x53B8",
+    "type": "uinteger",
+    "minver": "3",
+    "webm": "1",
+    "default": "0"
+  },
+  {
+    "name": "AlphaMode",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\AlphaMode)",
+    "cppname": "VideoAlphaMode",
+    "id": "0x53C0",
+    "type": "uinteger",
+    "minver": "3",
+    "webm": "1",
+    "default": "0"
+  },
+  {
+    "name": "OldStereoMode",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\OldStereoMode)",
+    "id": "0x53B9",
+    "type": "uinteger",
+    "maxver": "0",
+    "webm": "0",
+    "divx": "0"
+  },
+  {
+    "name": "PixelWidth",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\Video\\PixelWidth)",
+    "cppname": "VideoPixelWidth",
+    "id": "0xB0",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "range": "not 0"
+  },
+  {
+    "name": "PixelHeight",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\Video\\PixelHeight)",
+    "cppname": "VideoPixelHeight",
+    "id": "0xBA",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "range": "not 0"
+  },
+  {
+    "name": "PixelCropBottom",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\PixelCropBottom)",
+    "cppname": "VideoPixelCropBottom",
+    "id": "0x54AA",
+    "type": "uinteger",
+    "minver": "1",
+    "default": "0"
+  },
+  {
+    "name": "PixelCropTop",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\PixelCropTop)",
+    "cppname": "VideoPixelCropTop",
+    "id": "0x54BB",
+    "type": "uinteger",
+    "minver": "1",
+    "default": "0"
+  },
+  {
+    "name": "PixelCropLeft",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\PixelCropLeft)",
+    "cppname": "VideoPixelCropLeft",
+    "id": "0x54CC",
+    "type": "uinteger",
+    "minver": "1",
+    "default": "0"
+  },
+  {
+    "name": "PixelCropRight",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\PixelCropRight)",
+    "cppname": "VideoPixelCropRight",
+    "id": "0x54DD",
+    "type": "uinteger",
+    "minver": "1",
+    "default": "0"
+  },
+  {
+    "name": "DisplayWidth",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\DisplayWidth)",
+    "cppname": "VideoDisplayWidth",
+    "id": "0x54B0",
+    "type": "uinteger",
+    "minver": "1",
+    "default": "PixelWidth - PixelCropLeft - PixelCropRight",
+    "range": "not 0"
+  },
+  {
+    "name": "DisplayHeight",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\DisplayHeight)",
+    "cppname": "VideoDisplayHeight",
+    "id": "0x54BA",
+    "type": "uinteger",
+    "minver": "1",
+    "default": "PixelHeight - PixelCropTop - PixelCropBottom",
+    "range": "not 0"
+  },
+  {
+    "name": "DisplayUnit",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\DisplayUnit)",
+    "cppname": "VideoDisplayUnit",
+    "id": "0x54B2",
+    "type": "uinteger",
+    "minver": "1",
+    "default": "0"
+  },
+  {
+    "name": "AspectRatioType",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\AspectRatioType)",
+    "cppname": "VideoAspectRatio",
+    "id": "0x54B3",
+    "type": "uinteger",
+    "minver": "1",
+    "default": "0"
+  },
+  {
+    "name": "ColourSpace",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\ColourSpace)",
+    "cppname": "VideoColourSpace",
+    "id": "0x2EB524",
+    "type": "binary",
+    "minver": "1",
+    "webm": "0",
+    "size": "4"
+  },
+  {
+    "name": "GammaValue",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\GammaValue)",
+    "cppname": "VideoGamma",
+    "id": "0x2FB523",
+    "type": "float",
+    "minver": "0",
+    "maxver": "0",
+    "webm": "0",
+    "range": "> 0x0p+0"
+  },
+  {
+    "name": "FrameRate",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\FrameRate)",
+    "cppname": "VideoFrameRate",
+    "id": "0x2383E3",
+    "type": "float",
+    "minver": "0",
+    "maxver": "0",
+    "range": "> 0x0p+0"
+  },
+  {
+    "name": "Colour",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour)",
+    "cppname": "VideoColour",
+    "id": "0x55B0",
+    "type": "master",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "MatrixCoefficients",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\MatrixCoefficients)",
+    "cppname": "VideoColourMatrix",
+    "id": "0x55B1",
+    "type": "uinteger",
+    "default": "2",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "BitsPerChannel",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\BitsPerChannel)",
+    "cppname": "VideoBitsPerChannel",
+    "id": "0x55B2",
+    "type": "uinteger",
+    "default": "0",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "ChromaSubsamplingHorz",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\ChromaSubsamplingHorz)",
+    "cppname": "VideoChromaSubsampHorz",
+    "id": "0x55B3",
+    "type": "uinteger",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "ChromaSubsamplingVert",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\ChromaSubsamplingVert)",
+    "cppname": "VideoChromaSubsampVert",
+    "id": "0x55B4",
+    "type": "uinteger",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "CbSubsamplingHorz",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\CbSubsamplingHorz)",
+    "cppname": "VideoCbSubsampHorz",
+    "id": "0x55B5",
+    "type": "uinteger",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "CbSubsamplingVert",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\CbSubsamplingVert)",
+    "cppname": "VideoCbSubsampVert",
+    "id": "0x55B6",
+    "type": "uinteger",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "ChromaSitingHorz",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\ChromaSitingHorz)",
+    "cppname": "VideoChromaSitHorz",
+    "id": "0x55B7",
+    "type": "uinteger",
+    "default": "0",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "ChromaSitingVert",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\ChromaSitingVert)",
+    "cppname": "VideoChromaSitVert",
+    "id": "0x55B8",
+    "type": "uinteger",
+    "default": "0",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "Range",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\Range)",
+    "cppname": "VideoColourRange",
+    "id": "0x55B9",
+    "type": "uinteger",
+    "default": "0",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "TransferCharacteristics",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\TransferCharacteristics)",
+    "cppname": "VideoColourTransferCharacter",
+    "id": "0x55BA",
+    "type": "uinteger",
+    "default": "2",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "Primaries",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\Primaries)",
+    "cppname": "VideoColourPrimaries",
+    "id": "0x55BB",
+    "type": "uinteger",
+    "default": "2",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "MaxCLL",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\MaxCLL)",
+    "cppname": "VideoColourMaxCLL",
+    "id": "0x55BC",
+    "type": "uinteger",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "MaxFALL",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\MaxFALL)",
+    "cppname": "VideoColourMaxFALL",
+    "id": "0x55BD",
+    "type": "uinteger",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "MasteringMetadata",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\MasteringMetadata)",
+    "cppname": "VideoColourMasterMeta",
+    "id": "0x55D0",
+    "type": "master",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "PrimaryRChromaticityX",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\PrimaryRChromaticityX\\PrimaryRChromaticityX)",
+    "cppname": "VideoRChromaX",
+    "id": "0x55D1",
+    "type": "float",
+    "range": "0-1",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "PrimaryRChromaticityY",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\PrimaryRChromaticityX\\PrimaryRChromaticityY)",
+    "cppname": "VideoRChromaY",
+    "id": "0x55D2",
+    "type": "float",
+    "range": "0-1",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "PrimaryGChromaticityX",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\PrimaryRChromaticityX\\PrimaryGChromaticityX)",
+    "cppname": "VideoGChromaX",
+    "id": "0x55D3",
+    "type": "float",
+    "range": "0-1",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "PrimaryGChromaticityY",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\PrimaryRChromaticityX\\PrimaryGChromaticityY)",
+    "cppname": "VideoGChromaY",
+    "id": "0x55D4",
+    "type": "float",
+    "range": "0-1",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "PrimaryBChromaticityX",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\PrimaryRChromaticityX\\PrimaryBChromaticityX)",
+    "cppname": "VideoBChromaX",
+    "id": "0x55D5",
+    "type": "float",
+    "range": "0-1",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "PrimaryBChromaticityY",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\PrimaryRChromaticityX\\PrimaryBChromaticityY)",
+    "cppname": "VideoBChromaY",
+    "id": "0x55D6",
+    "type": "float",
+    "range": "0-1",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "WhitePointChromaticityX",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\PrimaryRChromaticityX\\WhitePointChromaticityX)",
+    "cppname": "VideoWhitePointChromaX",
+    "id": "0x55D7",
+    "type": "float",
+    "range": "0-1",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "WhitePointChromaticityY",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\PrimaryRChromaticityX\\WhitePointChromaticityY)",
+    "cppname": "VideoWhitePointChromaY",
+    "id": "0x55D8",
+    "type": "float",
+    "range": "0-1",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "LuminanceMax",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\PrimaryRChromaticityX\\LuminanceMax)",
+    "cppname": "VideoLuminanceMax",
+    "id": "0x55D9",
+    "type": "float",
+    "range": "0-9999.99",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "LuminanceMin",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Video\\Colour\\PrimaryRChromaticityX\\LuminanceMin)",
+    "cppname": "VideoLuminanceMin",
+    "id": "0x55DA",
+    "type": "float",
+    "range": "0-999.9999",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "Audio",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Audio)",
+    "cppname": "TrackAudio",
+    "id": "0xE1",
+    "type": "master",
+    "minver": "1"
+  },
+  {
+    "name": "SamplingFrequency",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\Audio\\SamplingFrequency)",
+    "cppname": "AudioSamplingFreq",
+    "id": "0xB5",
+    "type": "float",
+    "minOccurs": "1",
+    "minver": "1",
+    "default": "0x1.f4p+12",
+    "range": "> 0x0p+0"
+  },
+  {
+    "name": "OutputSamplingFrequency",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Audio\\OutputSamplingFrequency)",
+    "cppname": "AudioOutputSamplingFreq",
+    "id": "0x78B5",
+    "type": "float",
+    "minver": "1",
+    "default": "SamplingFrequency",
+    "range": "> 0x0p+0"
+  },
+  {
+    "name": "Channels",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\Audio\\Channels)",
+    "cppname": "AudioChannels",
+    "id": "0x9F",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "default": "1",
+    "range": "not 0"
+  },
+  {
+    "name": "ChannelPositions",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Audio\\ChannelPositions)",
+    "cppname": "AudioPosition",
+    "id": "0x7D7B",
+    "type": "binary",
+    "minver": "0",
+    "maxver": "0",
+    "webm": "0"
+  },
+  {
+    "name": "BitDepth",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\Audio\\BitDepth)",
+    "cppname": "AudioBitDepth",
+    "id": "0x6264",
+    "type": "uinteger",
+    "minver": "1",
+    "range": "not 0"
+  },
+  {
+    "name": "TrackOperation",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\TrackOperation)",
+    "id": "0xE2",
+    "type": "master",
+    "minver": "3",
+    "webm": "0"
+  },
+  {
+    "name": "TrackCombinePlanes",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\TrackOperation\\TrackCombinePlanes)",
+    "id": "0xE3",
+    "type": "master",
+    "minver": "3",
+    "webm": "0"
+  },
+  {
+    "name": "TrackPlane",
+    "path": "1*(\\Segment\\Tracks\\TrackEntry\\TrackOperation\\TrackCombinePlanes\\TrackPlane)",
+    "id": "0xE4",
+    "type": "master",
+    "minOccurs": "1",
+    "maxOccurs": "unbounded",
+    "minver": "3",
+    "webm": "0"
+  },
+  {
+    "name": "TrackPlaneUID",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\TrackOperation\\TrackCombinePlanes\\TrackPlane\\TrackPlaneUID)",
+    "id": "0xE5",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "3",
+    "webm": "0",
+    "range": "not 0"
+  },
+  {
+    "name": "TrackPlaneType",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\TrackOperation\\TrackCombinePlanes\\TrackPlane\\TrackPlaneType)",
+    "id": "0xE6",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "3",
+    "webm": "0"
+  },
+  {
+    "name": "TrackJoinBlocks",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\TrackOperation\\TrackJoinBlocks)",
+    "id": "0xE9",
+    "type": "master",
+    "minver": "3",
+    "webm": "0"
+  },
+  {
+    "name": "TrackJoinUID",
+    "path": "1*(\\Segment\\Tracks\\TrackEntry\\TrackOperation\\TrackJoinBlocks\\TrackJoinUID)",
+    "id": "0xED",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "maxOccurs": "unbounded",
+    "minver": "3",
+    "webm": "0",
+    "range": "not 0"
+  },
+  {
+    "name": "TrickTrackUID",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\TrickTrackUID)",
+    "id": "0xC0",
+    "type": "uinteger",
+    "minver": "0",
+    "maxver": "0",
+    "divx": "1"
+  },
+  {
+    "name": "TrickTrackSegmentUID",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\TrickTrackSegmentUID)",
+    "id": "0xC1",
+    "type": "binary",
+    "minver": "0",
+    "maxver": "0",
+    "divx": "1",
+    "size": "16"
+  },
+  {
+    "name": "TrickTrackFlag",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\TrickTrackFlag)",
+    "id": "0xC6",
+    "type": "uinteger",
+    "minver": "0",
+    "maxver": "0",
+    "divx": "1",
+    "default": "0"
+  },
+  {
+    "name": "TrickMasterTrackUID",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\TrickMasterTrackUID)",
+    "id": "0xC7",
+    "type": "uinteger",
+    "minver": "0",
+    "maxver": "0",
+    "divx": "1"
+  },
+  {
+    "name": "TrickMasterTrackSegmentUID",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\TrickMasterTrackSegmentUID)",
+    "id": "0xC4",
+    "type": "binary",
+    "minver": "0",
+    "maxver": "0",
+    "divx": "1",
+    "size": "16"
+  },
+  {
+    "name": "ContentEncodings",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\ContentEncodings)",
+    "id": "0x6D80",
+    "type": "master",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "ContentEncoding",
+    "path": "1*(\\Segment\\Tracks\\TrackEntry\\ContentEncodings\\ContentEncoding)",
+    "id": "0x6240",
+    "type": "master",
+    "minOccurs": "1",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "ContentEncodingOrder",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\ContentEncodings\\ContentEncoding\\ContentEncodingOrder)",
+    "id": "0x5031",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0",
+    "default": "0"
+  },
+  {
+    "name": "ContentEncodingScope",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\ContentEncodings\\ContentEncoding\\ContentEncodingScope)",
+    "id": "0x5032",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0",
+    "default": "1",
+    "range": "not 0"
+  },
+  {
+    "name": "ContentEncodingType",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\ContentEncodings\\ContentEncoding\\ContentEncodingType)",
+    "id": "0x5033",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0",
+    "default": "0"
+  },
+  {
+    "name": "ContentCompression",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\ContentEncodings\\ContentEncoding\\ContentCompression)",
+    "id": "0x5034",
+    "type": "master",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "ContentCompAlgo",
+    "path": "1*1(\\Segment\\Tracks\\TrackEntry\\ContentEncodings\\ContentEncoding\\ContentCompression\\ContentCompAlgo)",
+    "id": "0x4254",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0",
+    "default": "0"
+  },
+  {
+    "name": "ContentCompSettings",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\ContentEncodings\\ContentEncoding\\ContentCompression\\ContentCompSettings)",
+    "id": "0x4255",
+    "type": "binary",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "ContentEncryption",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\ContentEncodings\\ContentEncoding\\ContentEncryption)",
+    "id": "0x5035",
+    "type": "master",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "ContentEncAlgo",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\ContentEncodings\\ContentEncoding\\ContentEncryption\\ContentEncAlgo)",
+    "id": "0x47E1",
+    "type": "uinteger",
+    "minver": "1",
+    "webm": "0",
+    "default": "0"
+  },
+  {
+    "name": "ContentEncKeyID",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\ContentEncodings\\ContentEncoding\\ContentEncryption\\ContentEncKeyID)",
+    "id": "0x47E2",
+    "type": "binary",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "ContentSignature",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\ContentEncodings\\ContentEncoding\\ContentEncryption\\ContentSignature)",
+    "id": "0x47E3",
+    "type": "binary",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "ContentSigKeyID",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\ContentEncodings\\ContentEncoding\\ContentEncryption\\ContentSigKeyID)",
+    "id": "0x47E4",
+    "type": "binary",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "ContentSigAlgo",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\ContentEncodings\\ContentEncoding\\ContentEncryption\\ContentSigAlgo)",
+    "id": "0x47E5",
+    "type": "uinteger",
+    "minver": "1",
+    "webm": "0",
+    "default": "0"
+  },
+  {
+    "name": "ContentSigHashAlgo",
+    "path": "0*1(\\Segment\\Tracks\\TrackEntry\\ContentEncodings\\ContentEncoding\\ContentEncryption\\ContentSigHashAlgo)",
+    "id": "0x47E6",
+    "type": "uinteger",
+    "minver": "1",
+    "webm": "0",
+    "default": "0"
+  },
+  {
+    "name": "Cues",
+    "path": "0*1(\\Segment\\Cues)",
+    "id": "0x1C53BB6B",
+    "type": "master",
+    "minver": "1"
+  },
+  {
+    "name": "CuePoint",
+    "path": "1*(\\Segment\\Cues\\CuePoint)",
+    "id": "0xBB",
+    "type": "master",
+    "minOccurs": "1",
+    "maxOccurs": "unbounded",
+    "minver": "1"
+  },
+  {
+    "name": "CueTime",
+    "path": "1*1(\\Segment\\Cues\\CuePoint\\CueTime)",
+    "id": "0xB3",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1"
+  },
+  {
+    "name": "CueTrackPositions",
+    "path": "1*(\\Segment\\Cues\\CuePoint\\CueTrackPositions)",
+    "id": "0xB7",
+    "type": "master",
+    "minOccurs": "1",
+    "maxOccurs": "unbounded",
+    "minver": "1"
+  },
+  {
+    "name": "CueTrack",
+    "path": "1*1(\\Segment\\Cues\\CuePoint\\CueTrackPositions\\CueTrack)",
+    "id": "0xF7",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "range": "not 0"
+  },
+  {
+    "name": "CueClusterPosition",
+    "path": "1*1(\\Segment\\Cues\\CuePoint\\CueTrackPositions\\CueClusterPosition)",
+    "id": "0xF1",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1"
+  },
+  {
+    "name": "CueRelativePosition",
+    "path": "0*1(\\Segment\\Cues\\CuePoint\\CueTrackPositions\\CueRelativePosition)",
+    "id": "0xF0",
+    "type": "uinteger",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "CueDuration",
+    "path": "0*1(\\Segment\\Cues\\CuePoint\\CueTrackPositions\\CueDuration)",
+    "id": "0xB2",
+    "type": "uinteger",
+    "minver": "4",
+    "webm": "0"
+  },
+  {
+    "name": "CueBlockNumber",
+    "path": "0*1(\\Segment\\Cues\\CuePoint\\CueTrackPositions\\CueBlockNumber)",
+    "id": "0x5378",
+    "type": "uinteger",
+    "minver": "1",
+    "default": "1",
+    "range": "not 0"
+  },
+  {
+    "name": "CueCodecState",
+    "path": "0*1(\\Segment\\Cues\\CuePoint\\CueTrackPositions\\CueCodecState)",
+    "id": "0xEA",
+    "type": "uinteger",
+    "minver": "2",
+    "webm": "0",
+    "default": "0"
+  },
+  {
+    "name": "CueReference",
+    "path": "0*(\\Segment\\Cues\\CuePoint\\CueTrackPositions\\CueReference)",
+    "id": "0xDB",
+    "type": "master",
+    "maxOccurs": "unbounded",
+    "minver": "2",
+    "webm": "0"
+  },
+  {
+    "name": "CueRefTime",
+    "path": "1*1(\\Segment\\Cues\\CuePoint\\CueTrackPositions\\CueReference\\CueRefTime)",
+    "id": "0x96",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "2",
+    "webm": "0"
+  },
+  {
+    "name": "CueRefCluster",
+    "path": "1*1(\\Segment\\Cues\\CuePoint\\CueTrackPositions\\CueReference\\CueRefCluster)",
+    "id": "0x97",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "0",
+    "maxver": "0",
+    "webm": "0"
+  },
+  {
+    "name": "CueRefNumber",
+    "path": "0*1(\\Segment\\Cues\\CuePoint\\CueTrackPositions\\CueReference\\CueRefNumber)",
+    "id": "0x535F",
+    "type": "uinteger",
+    "minver": "0",
+    "maxver": "0",
+    "webm": "0",
+    "default": "1",
+    "range": "not 0"
+  },
+  {
+    "name": "CueRefCodecState",
+    "path": "0*1(\\Segment\\Cues\\CuePoint\\CueTrackPositions\\CueReference\\CueRefCodecState)",
+    "id": "0xEB",
+    "type": "uinteger",
+    "minver": "0",
+    "maxver": "0",
+    "webm": "0",
+    "default": "0"
+  },
+  {
+    "name": "Attachments",
+    "path": "0*1(\\Segment\\Attachments)",
+    "id": "0x1941A469",
+    "type": "master",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "AttachedFile",
+    "path": "1*(\\Segment\\Attachments\\AttachedFile)",
+    "id": "0x61A7",
+    "type": "master",
+    "minOccurs": "1",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "FileDescription",
+    "path": "0*1(\\Segment\\Attachments\\AttachedFile\\FileDescription)",
+    "id": "0x467E",
+    "type": "utf-8",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "FileName",
+    "path": "1*1(\\Segment\\Attachments\\AttachedFile\\FileName)",
+    "id": "0x466E",
+    "type": "utf-8",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "FileMimeType",
+    "path": "1*1(\\Segment\\Attachments\\AttachedFile\\FileMimeType)",
+    "id": "0x4660",
+    "type": "string",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "FileData",
+    "path": "1*1(\\Segment\\Attachments\\AttachedFile\\FileData)",
+    "id": "0x465C",
+    "type": "binary",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "FileUID",
+    "path": "1*1(\\Segment\\Attachments\\AttachedFile\\FileUID)",
+    "id": "0x46AE",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0",
+    "range": "not 0"
+  },
+  {
+    "name": "FileReferral",
+    "path": "0*1(\\Segment\\Attachments\\AttachedFile\\FileReferral)",
+    "id": "0x4675",
+    "type": "binary",
+    "minver": "0",
+    "maxver": "0",
+    "webm": "0"
+  },
+  {
+    "name": "FileUsedStartTime",
+    "path": "0*1(\\Segment\\Attachments\\AttachedFile\\FileUsedStartTime)",
+    "id": "0x4661",
+    "type": "uinteger",
+    "minver": "0",
+    "maxver": "0",
+    "divx": "1"
+  },
+  {
+    "name": "FileUsedEndTime",
+    "path": "0*1(\\Segment\\Attachments\\AttachedFile\\FileUsedEndTime)",
+    "id": "0x4662",
+    "type": "uinteger",
+    "minver": "0",
+    "maxver": "0",
+    "divx": "1"
+  },
+  {
+    "name": "Chapters",
+    "path": "0*1(\\Segment\\Chapters)",
+    "id": "0x1043A770",
+    "type": "master",
+    "minver": "1",
+    "webm": "1"
+  },
+  {
+    "name": "EditionEntry",
+    "path": "1*(\\Segment\\Chapters\\EditionEntry)",
+    "id": "0x45B9",
+    "type": "master",
+    "minOccurs": "1",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "1"
+  },
+  {
+    "name": "EditionUID",
+    "path": "0*1(\\Segment\\Chapters\\EditionEntry\\EditionUID)",
+    "id": "0x45BC",
+    "type": "uinteger",
+    "minver": "1",
+    "webm": "0",
+    "range": "not 0"
+  },
+  {
+    "name": "EditionFlagHidden",
+    "path": "1*1(\\Segment\\Chapters\\EditionEntry\\EditionFlagHidden)",
+    "id": "0x45BD",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0",
+    "default": "0",
+    "range": "0-1"
+  },
+  {
+    "name": "EditionFlagDefault",
+    "path": "1*1(\\Segment\\Chapters\\EditionEntry\\EditionFlagDefault)",
+    "id": "0x45DB",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0",
+    "default": "0",
+    "range": "0-1"
+  },
+  {
+    "name": "EditionFlagOrdered",
+    "path": "0*1(\\Segment\\Chapters\\EditionEntry\\EditionFlagOrdered)",
+    "id": "0x45DD",
+    "type": "uinteger",
+    "minver": "1",
+    "webm": "0",
+    "default": "0",
+    "range": "0-1"
+  },
+  {
+    "name": "ChapterAtom",
+    "path": "1*(\\Segment\\Chapters\\EditionEntry(1*(\\ChapterAtom)))",
+    "recursive": "1",
+    "id": "0xB6",
+    "type": "master",
+    "minOccurs": "1",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "1"
+  },
+  {
+    "name": "ChapterUID",
+    "path": "1*1(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapterUID)",
+    "id": "0x73C4",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "1",
+    "range": "not 0"
+  },
+  {
+    "name": "ChapterStringUID",
+    "path": "0*1(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapterStringUID)",
+    "id": "0x5654",
+    "type": "utf-8",
+    "minver": "3",
+    "webm": "1"
+  },
+  {
+    "name": "ChapterTimeStart",
+    "path": "1*1(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapterTimeStart)",
+    "id": "0x91",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "1"
+  },
+  {
+    "name": "ChapterTimeEnd",
+    "path": "0*1(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapterTimeEnd)",
+    "id": "0x92",
+    "type": "uinteger",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "ChapterFlagHidden",
+    "path": "1*1(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapterFlagHidden)",
+    "id": "0x98",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0",
+    "default": "0",
+    "range": "0-1"
+  },
+  {
+    "name": "ChapterFlagEnabled",
+    "path": "1*1(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapterFlagEnabled)",
+    "id": "0x4598",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0",
+    "default": "1",
+    "range": "0-1"
+  },
+  {
+    "name": "ChapterSegmentUID",
+    "path": "0*1(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapterSegmentUID)",
+    "id": "0x6E67",
+    "type": "binary",
+    "minver": "1",
+    "webm": "0",
+    "range": ">0",
+    "size": "16"
+  },
+  {
+    "name": "ChapterSegmentEditionUID",
+    "path": "0*1(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapterSegmentEditionUID)",
+    "id": "0x6EBC",
+    "type": "uinteger",
+    "minver": "1",
+    "webm": "0",
+    "range": "not 0"
+  },
+  {
+    "name": "ChapterPhysicalEquiv",
+    "path": "0*1(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapterPhysicalEquiv)",
+    "id": "0x63C3",
+    "type": "uinteger",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "ChapterTrack",
+    "path": "0*1(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapterTrack)",
+    "id": "0x8F",
+    "type": "master",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "ChapterTrackNumber",
+    "path": "1*(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapterTrack\\ChapterTrackNumber)",
+    "id": "0x89",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0",
+    "range": "not 0"
+  },
+  {
+    "name": "ChapterDisplay",
+    "path": "0*(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapterDisplay)",
+    "id": "0x80",
+    "type": "master",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "1"
+  },
+  {
+    "name": "ChapString",
+    "path": "1*1(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapterDisplay\\ChapString)",
+    "cppname": "ChapterString",
+    "id": "0x85",
+    "type": "utf-8",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "1"
+  },
+  {
+    "name": "ChapLanguage",
+    "path": "1*(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapterDisplay\\ChapLanguage)",
+    "cppname": "ChapterLanguage",
+    "id": "0x437C",
+    "type": "string",
+    "minOccurs": "1",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "1",
+    "default": "eng"
+  },
+  {
+    "name": "ChapCountry",
+    "path": "0*(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapterDisplay\\ChapCountry)",
+    "cppname": "ChapterCountry",
+    "id": "0x437E",
+    "type": "string",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "ChapProcess",
+    "path": "0*(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapProcess)",
+    "cppname": "ChapterProcess",
+    "id": "0x6944",
+    "type": "master",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "ChapProcessCodecID",
+    "path": "1*1(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapProcess\\ChapProcessCodecID)",
+    "cppname": "ChapterProcessCodecID",
+    "id": "0x6955",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0",
+    "default": "0"
+  },
+  {
+    "name": "ChapProcessPrivate",
+    "path": "0*1(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapProcess\\ChapProcessPrivate)",
+    "cppname": "ChapterProcessPrivate",
+    "id": "0x450D",
+    "type": "binary",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "ChapProcessCommand",
+    "path": "0*(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapProcess\\ChapProcessCommand)",
+    "cppname": "ChapterProcessCommand",
+    "id": "0x6911",
+    "type": "master",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "ChapProcessTime",
+    "path": "1*1(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapProcess\\ChapProcessCommand\\ChapProcessTime)",
+    "cppname": "ChapterProcessTime",
+    "id": "0x6922",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "ChapProcessData",
+    "path": "1*1(\\Segment\\Chapters\\EditionEntry\\ChapterAtom\\ChapProcess\\ChapProcessCommand\\ChapProcessData)",
+    "cppname": "ChapterProcessData",
+    "id": "0x6933",
+    "type": "binary",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "Tags",
+    "path": "0*(\\Segment\\Tags)",
+    "id": "0x1254C367",
+    "type": "master",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "Tag",
+    "path": "1*(\\Segment\\Tags\\Tag)",
+    "id": "0x7373",
+    "type": "master",
+    "minOccurs": "1",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "Targets",
+    "path": "1*1(\\Segment\\Tags\\Tag\\Targets)",
+    "cppname": "TagTargets",
+    "id": "0x63C0",
+    "type": "master",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "TargetTypeValue",
+    "path": "0*1(\\Segment\\Tags\\Tag\\Targets\\TargetTypeValue)",
+    "cppname": "TagTargetTypeValue",
+    "id": "0x68CA",
+    "type": "uinteger",
+    "minver": "1",
+    "webm": "0",
+    "default": "50"
+  },
+  {
+    "name": "TargetType",
+    "path": "0*1(\\Segment\\Tags\\Tag\\Targets\\TargetType)",
+    "cppname": "TagTargetType",
+    "id": "0x63CA",
+    "type": "string",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "TagTrackUID",
+    "path": "0*(\\Segment\\Tags\\Tag\\Targets\\TagTrackUID)",
+    "id": "0x63C5",
+    "type": "uinteger",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0",
+    "default": "0"
+  },
+  {
+    "name": "TagEditionUID",
+    "path": "0*(\\Segment\\Tags\\Tag\\Targets\\TagEditionUID)",
+    "id": "0x63C9",
+    "type": "uinteger",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0",
+    "default": "0"
+  },
+  {
+    "name": "TagChapterUID",
+    "path": "0*(\\Segment\\Tags\\Tag\\Targets\\TagChapterUID)",
+    "id": "0x63C4",
+    "type": "uinteger",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0",
+    "default": "0"
+  },
+  {
+    "name": "TagAttachmentUID",
+    "path": "0*(\\Segment\\Tags\\Tag\\Targets\\TagAttachmentUID)",
+    "id": "0x63C6",
+    "type": "uinteger",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0",
+    "default": "0"
+  },
+  {
+    "name": "SimpleTag",
+    "path": "1*(\\Segment\\Tags\\Tag(1*(\\SimpleTag)))",
+    "cppname": "TagSimple",
+    "recursive": "1",
+    "id": "0x67C8",
+    "type": "master",
+    "minOccurs": "1",
+    "maxOccurs": "unbounded",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "TagName",
+    "path": "1*1(\\Segment\\Tags\\Tag\\SimpleTag\\TagName)",
+    "id": "0x45A3",
+    "type": "utf-8",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "TagLanguage",
+    "path": "1*1(\\Segment\\Tags\\Tag\\SimpleTag\\TagLanguage)",
+    "id": "0x447A",
+    "type": "string",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0",
+    "default": "und"
+  },
+  {
+    "name": "TagDefault",
+    "path": "1*1(\\Segment\\Tags\\Tag\\SimpleTag\\TagDefault)",
+    "id": "0x4484",
+    "type": "uinteger",
+    "minOccurs": "1",
+    "minver": "1",
+    "webm": "0",
+    "default": "1",
+    "range": "0-1"
+  },
+  {
+    "name": "TagString",
+    "path": "0*1(\\Segment\\Tags\\Tag\\SimpleTag\\TagString)",
+    "id": "0x4487",
+    "type": "utf-8",
+    "minver": "1",
+    "webm": "0"
+  },
+  {
+    "name": "TagBinary",
+    "path": "0*1(\\Segment\\Tags\\Tag\\SimpleTag\\TagBinary)",
+    "id": "0x4485",
+    "type": "binary",
+    "minver": "1",
+    "webm": "0"
+  }
+]

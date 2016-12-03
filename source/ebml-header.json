@@ -1,0 +1,94 @@
+[
+  {
+    "name": "EBML",
+    "path": "1*1(\\EBML)",
+    "id": "0x1A45DFA3",
+    "minOccurs": 1,
+    "maxOccurs": 1,
+    "type": "master"
+  },
+  {
+    "name": "EBMLVersion",
+    "path": "1*1(\\EBML\\EBMLVersion)",
+    "id": "0x4286",
+    "minOccurs": 1,
+    "maxOccurs": 1,
+    "range": "1",
+    "default": 1,
+    "type": "uinteger"
+  },
+  {
+    "name": "EBMLReadVersion",
+    "path": "1*1(\\EBML\\EBMLReadVersion)",
+    "id": "0x42F7",
+    "minOccurs": 1,
+    "maxOccurs": 1,
+    "range": "1",
+    "default": 1,
+    "type": "uinteger"
+  },
+  {
+    "name": "EBMLMaxIDLength",
+    "path": "1*1(\\EBML\\EBMLMaxIDLength)",
+    "id": "0x42F2",
+    "minOccurs": 1,
+    "maxOccurs": 1,
+    "range": ">=4",
+    "default": 4,
+    "type": "uinteger"
+  },
+  {
+    "name": "EBMLMaxSizeLength",
+    "path": "1*1(\\EBML\\EBMLMaxSizeLength)",
+    "id": "0x42F3",
+    "minOccurs": 1,
+    "maxOccurs": 1,
+    "range": ">0",
+    "default": 8,
+    "type": "uinteger"
+  },
+  {
+    "name": "DocType",
+    "path": "1*1(\\EBML\\DocType)",
+    "id": "0x4282",
+    "minOccurs": 1,
+    "maxOccurs": 1,
+    "size": ">0",
+    "type": "string"
+  },
+  {
+    "name": "DocTypeVersion",
+    "path": "1*1(\\EBML\\DocTypeVersion)",
+    "id": "0x4287",
+    "minOccurs": 1,
+    "maxOccurs": 1,
+    "default": 1,
+    "type": "uinteger"
+  },
+  {
+    "name": "DocTypeReadVersion",
+    "path": "1*1(\\EBML\\DocTypeReadVersion)",
+    "id": "0x4285",
+    "minOccurs": 1,
+    "maxOccurs": 1,
+    "default": 1,
+    "type": "uinteger"
+  },
+  {
+    "name": "CRC-32",
+    "path": "*1((1*\\)\\CRC-32)",
+    "id": "0xBF",
+    "minOccurs": 0,
+    "maxOccurs": 1,
+    "size": "4",
+    "type": "binary"
+  },
+  {
+    "name": "Void",
+    "path": "*((*\\)\\Void)",
+    "id": "0xEC",
+    "minOccurs": 0,
+    "maxOccurs": "unbounded",
+    "type": "binary"
+  }
+]
